@@ -4,5 +4,10 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="libs/RobotLibrary.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Steven/Desktop/Utilities/adt-bundle-windows/eclipse/orbotix-Sphero-Android-SDK-b8d16c8/api_doc/RobotLibrary Doc.zip!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

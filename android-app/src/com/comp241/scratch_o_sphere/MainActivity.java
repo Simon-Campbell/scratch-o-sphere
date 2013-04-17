@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    public SpheroController spheroController;
+    public static SpheroController spheroController;
 
     private SpheroConnectionView mSpheroConnectionView;
     private Handler mHandler = new Handler();
@@ -38,9 +38,9 @@ public class MainActivity extends Activity {
     		// The user clicked a Sphero and it successfully paired.
     		@Override
     		public void onRobotConnected(Robot robot) {
-    			spheroController = new SpheroController(robot);
+    			MainActivity.spheroController = new SpheroController(robot);
     			
-    			Toast.makeText(MainActivity.this, "Found and connect to Sphero", Toast.LENGTH_LONG).show();
+    			Toast.makeText(MainActivity.this, "Found and connected to Sphero", Toast.LENGTH_LONG).show();
 
     			// Skip this next step if you want the user to be able to connect multiple Spheros
     			mSpheroConnectionView.setVisibility(View.GONE);
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
     			mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                    	spheroController.setBackLED(1.0f);
+                    	MainActivity.spheroController.setBackLED(1.0f);
                     }
                 }, 1000);
     		}

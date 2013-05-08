@@ -1,0 +1,41 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Role</th>
+            <th>Permissions</th>
+            <th>Misc</th>
+        </tr>
+        <repeat group="{{ @ROLES }}" value="{{ @role }}">
+            <tr>
+                <td>{{ @role->ID }}</td>
+                <td>{{ @role->NAME }}</td>
+                <td>
+                    <check if="{{ @role->PERMISSIONMASK > 0 }}">
+                        <true>
+                            <select>
+                                <repeat group="{{ $PERMISSIONS }}" value="{{ $perm }}">
+                                    <check if="{{ @role->hasPermissionById($perm->ID) }}">
+                                        <option>{{ $perm->NAME }}</option>
+                                    </check>
+                                </repeat>
+                            </select>
+                        </true>
+                        <false>
+                            No special permissions
+                        </false>
+                    </check>
+                </td>
+                <td>
+                    <a href="/roles/edit/{{ @role->ID }}">Edit</a>, 
+                    <a href="/roles/delete/{{ @role->ID }}">Delete</a>
+                </td>
+            </tr>
+        </repeat>
+    </table>
+</div>
+
+<include href="footer.htm" />

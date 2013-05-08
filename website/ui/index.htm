@@ -1,0 +1,27 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <div class="hero-unit">
+        <h1>Welcome to SOS<check if="{{ @MYUSER->isLoggedIn() }}">, {{ @MYUSER->REALNAME }}</check></h1>
+        <p>This is the landing page for the Scratch O Sphere project</p>
+        <check if="{{ @MYUSER->isLoggedIn() }}">
+            <false>
+                <em class="text-info">If you want to log into the system, use the form above</em> 
+            </false>
+        </check>
+    </div>
+    
+    <div class="row">
+        <div class="span6">
+            <h2>Info</h2>
+            <p>Some information about the project can go here</p>
+        </div>
+        <div class="span6">
+            <h2>Contact</h2>
+            <p>Some information about contacting the SoS team can go here</p>
+        </div>
+    </div>
+</div>
+
+<include href="footer.htm" />

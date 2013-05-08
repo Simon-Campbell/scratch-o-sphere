@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>SOS</Name>
+    <ProjectGuid>939e1bd8-d27d-46c2-aa73-3795fb077c86</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SOS</RootNamespace>
+    <!-- important to be opened by PHP Tools, when also Phalanger Tools are installed -->
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>SOS</AssemblyName>
+    <IISProjectUrl>http://localhost:5861/</IISProjectUrl>
+    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+    <Server>PHPDev</Server>
+    <PublishEvent>None</PublishEvent>
+    <PHPDevAutoPort>False</PHPDevAutoPort>
+    <PHPDevPort>8005</PHPDevPort>
+    <PHPDevRouting>
+    </PHPDevRouting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="db.local.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\acl\PermissionTable.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\acl\Permission.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\acl\Role.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\acl\RoleTable.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\acl\User.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\acl\UserTable.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\audit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\auth.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\base.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\basket.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\config.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\cursor.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\jig.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\jig\mapper.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\jig\session.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\mongo.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\mongo\mapper.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\mongo\session.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\sql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\sql\mapper.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db\sql\session.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\f3.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\image.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\JSON.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\log.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\magic.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\markdown.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\matrix.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\session.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\smtp.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\template.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\test.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\utf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\views\Jobs.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\views\_403.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\views\Index.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\views\Roles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\views\UsersEdit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\views\Users.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\web.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\web\geo.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\web\openid.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\web\pingback.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="index.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+    <Folder Include="lib\db" />
+    <Folder Include="lib\db\jig" />
+    <Folder Include="lib\db\mongo" />
+    <Folder Include="lib\db\sql" />
+    <Folder Include="lib\acl" />
+    <Folder Include="lib\views" />
+    <Folder Include="lib\web" />
+    <Folder Include="ui" />
+    <Folder Include="ui\css" />
+    <Folder Include="ui\img" />
+    <Folder Include="ui\js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".htaccess">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\api.chm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\changelog.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\code.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\license.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="readme.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\base.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap-responsive.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap-responsive.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\login.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\theme.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\edituser.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\error.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\footer.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\head.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\glyphicons-halflings-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\glyphicons-halflings.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\index.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\jobs.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\bootstrap.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\bootstrap.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\html5shiv.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\jquery-1.9.1.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\login.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\navbar.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\rolestable.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\userstable.htm">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

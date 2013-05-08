@@ -1,0 +1,91 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Scratch O Sphere</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <check if="{{ @MYUSER->isLoggedIn() }}">
+                        <li>
+                            <a href="/create">Create new Script</a>
+                        </li>
+                    </check>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Link Test <i class="icon-wrench icon-white"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/scriptinfo/1">Script Info 1</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <i class="icon-wrench icon-white"></i></a>
+                        <ul class="dropdown-menu">
+                            <check if="{{ @MYUSER->isLoggedIn() }}">
+                                <li class="nav-header">User</li>
+                                <li>
+                                    <a href="/settings">Manage Settings</a>
+                                </li>
+                            </check>
+                            
+                            <check if="{{ @MYUSER->isLoggedIn() }}">
+                                <li class="divider"></li>
+                                <li class="nav-header">Admin</li>
+                            </check>
+                            <check if="{{ @MYUSER->ROLE->hasPermissionByRoute('/users') }}">
+                                <li>
+                                    <a href="/users">Manage Users</a>
+                                </li>
+                            </check>
+                            <check if="{{ @MYUSER->ROLE->hasPermissionByRoute('/roles') }}">
+                                <li>
+                                    <a href="/roles">Manage Roles</a>
+                                </li>
+                            </check>
+                    
+                            <check if="{{ @MYUSER->isLoggedIn() }}">
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/logout">Logout</a>
+                                </li>
+                            </check>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <check if="{{ @MYUSER->isLoggedIn() }}">
+                    <false>
+                        <!-- DISPLAY LOGIN FORM -->
+                        <form class="navbar-form pull-right" action="/login" method="POST">
+                            <input class="span2" name="email" type="text" placeholder="Email">
+                            <input class="span2" name="password" type="password" placeholder="Password">
+                            <button type="submit" class="btn">Sign in</button>
+                        </form>
+                    </false>
+                    
+                    <true>
+                        <ul class="nav pull-right">
+                            <repeat group="{{ @PAGELINKS }}" value="{{ @linksarr }}">
+                                <repeat group="{{ @linksarr }}" value="{{ @value }}" key="{{ @link }}">
+                                    <li class="pull-right">
+                                        <a href="{{ @link }}">{{ @value }}</a>
+                                    </li>
+                                </repeat>>
+                            </repeat>
+                        </ul>
+                    </true>
+                </check>
+            </div>
+        </div>
+    </div>
+</div>

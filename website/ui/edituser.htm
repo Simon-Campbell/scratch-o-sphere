@@ -1,0 +1,35 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <form class="form-horizontal" method="POST">
+        <div class="control-group">
+            <label>Username</label>
+            <input type="text" name="username" id="username" placeholder="Username" value="{{ $EDITUSER['username'] }}">
+        </div>
+        <div class="control-group">
+            <label>Real Name</label>
+            <input type="text" name="realname" id="realname" placeholder="Real Name" value="{{ $EDITUSER['realname'] }}">
+        </div>
+        <div class="control-group">
+            <label>Role</label>
+            <select name="role" id="role" placeholder="Role">
+                <repeat group="{{ $ROLES }}" value="{{ $role }}">
+                    <option <check if="{{ $EDITUSER['role'] == $role->ID }}">selected="selected"</check> value="{{ $role->ID }}">
+                        {{ $role->NAME }}
+                    </option>
+                </repeat>
+            </select>
+        </div>
+        <div class="control-group">
+            <button type="submit" class="btn">
+                <check if="{{ $EDITUSER['username'] }}">
+                    <false>Submit</false>
+                    <true>Update</true>
+                </check>
+            </button>
+        </div>
+    </form>
+</div>
+
+<include href="footer.htm" />

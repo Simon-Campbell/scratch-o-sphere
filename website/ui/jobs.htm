@@ -1,0 +1,25 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <form method="POST">
+        <input type="search" name="search" placeholder="Job #"/>
+    </form>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Misc</th>
+        </tr>
+        <repeat group="{{ @JOBS }}" value="{{ @job }}">
+            <tr>
+                <td>{{ @job['id'] }}</td>
+                <td>
+                    <a href="/jobs/edit/{{ @job['id'] }}">Edit</a>, 
+                    <a href="/jobs/delete/{{ @job['id'] }}">Delete</a>
+                </td>
+            </tr>
+        </repeat>
+    </table>
+</div>
+
+<include href="footer.htm" />

@@ -1,5 +1,7 @@
 package com.comp241.scratch_o_sphere;
 
+import com.comp241.scratch_o_sphere.parser.Parser;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +21,7 @@ public class ScriptsActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		
+		Parser p = new Parser();
 	}
 
 	/**

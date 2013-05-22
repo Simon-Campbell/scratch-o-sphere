@@ -7,7 +7,7 @@
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Steven/Desktop/Utilities/adt-bundle-windows/eclipse/orbotix-Sphero-Android-SDK-b8d16c8/api_doc/RobotLibrary Doc.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="libs/luaj-jse-3.0-alpha2.jar"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -13,14 +13,32 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+       
         <activity
-            android:name="com.comp241.scratch_o_sphere.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.comp241.scratch_o_sphere.LoginActivity"
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.comp241.scratch_o_sphere.ScriptsActivity"
+            android:label="@string/title_activity_scripts"
+            android:parentActivityName="com.comp241.scratch_o_sphere.LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comp241.scratch_o_sphere.LoginActivity" />
+        </activity>
+         <activity
+            android:name="com.comp241.scratch_o_sphere.MainActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.comp241.scratch_o_sphere.ScriptsActivity" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comp241.scratch_o_sphere.ScriptsActivity" />
+            
         </activity>
     </application>
 

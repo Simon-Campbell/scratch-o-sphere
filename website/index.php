@@ -26,6 +26,8 @@ $f3->push('EXTRACSS', 'input[type="text"], input[type="password"], input[type="e
 //Set up routes//
 $f3->config('config.cfg');
 
+$test = "test";
+
 //Do a permission check on the user//
 ACL\User::instance()->routeCheck($f3);
 

@@ -1,71 +1,38 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top">
+﻿<div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="/">Scratch O Sphere</a>
+            <a class="brand" href="/">SOS System</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li class="active">
-                        <a href="/">Home</a>
-                    </li>
-                    
-                    <check if="{{ @MYUSER->isLoggedIn() }}">
-                        <li>
-                            <a href="/create">Create new Script</a>
+                    <repeat group="{{ @NAVBAR }}" "value="{{ @item }}">
+                        <li class="{{ @item['class'] }} <check if="{{ sizeof(@item['subitems']) > 0 }}"> dropdown</check>">
+                            <a href="{{ @item['url'] }}" <check if="{{ sizeof(@item['subitems']) > 0 }}">class="dropdown-toggle" data-toggle="dropdown"</check>>{{ htmlspecialchars_decode(@item['title']) }}</a>
+                            <check if="{{ sizeof(@item['subitems']) > 0 }}">
+                                <ul class="dropdown-menu">
+                                    <repeat group="{{ @item['subitems'] }}" value="{{ @subitem }}">
+                                        <li class="{{ @subitem['class'] }}">
+                                            <check if="{{ @subitem['nohref'] }}">
+                                                <true>
+                                                    {{ @subitem['title'] }}
+                                                </true>
+                                                <false>
+                                                    <a href="{{ @subitem['url'] }}">{{ htmlspecialchars_decode(@subitem['title']) }}</a>
+                                                </false>
+                                            </check>
+                                        </li>
+                                    </repeat>
+                                </ul>
+                            </check>
                         </li>
-                    </check>
-                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Link Test <i class="icon-wrench icon-white"></i></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/scriptinfo/1">Script Info 1</a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <i class="icon-wrench icon-white"></i></a>
-                        <ul class="dropdown-menu">
-                            <check if="{{ @MYUSER->isLoggedIn() }}">
-                                <li class="nav-header">User</li>
-                                <li>
-                                    <a href="/settings">Manage Settings</a>
-                                </li>
-                            </check>
-                            
-                            <check if="{{ @MYUSER->isLoggedIn() }}">
-                                <li class="divider"></li>
-                                <li class="nav-header">Admin</li>
-                            </check>
-                            <check if="{{ @MYUSER->ROLE->hasPermissionByRoute('/users') }}">
-                                <li>
-                                    <a href="/users">Manage Users</a>
-                                </li>
-                            </check>
-                            <check if="{{ @MYUSER->ROLE->hasPermissionByRoute('/roles') }}">
-                                <li>
-                                    <a href="/roles">Manage Roles</a>
-                                </li>
-                            </check>
-                    
-                            <check if="{{ @MYUSER->isLoggedIn() }}">
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="/logout">Logout</a>
-                                </li>
-                            </check>
-                        </ul>
-                    </li>
-                    
+                    </repeat>
                 </ul>
                 <check if="{{ @MYUSER->isLoggedIn() }}">
                     <false>
-                        <!-- DISPLAY LOGIN FORM -->
                         <form class="navbar-form pull-right" action="/login" method="POST">
                             <input class="span2" name="email" type="text" placeholder="Email">
                             <input class="span2" name="password" type="password" placeholder="Password">
@@ -88,4 +55,19 @@
             </div>
         </div>
     </div>
+</div>
+        
+<div class="container">
+    <repeat group="{{ @ERRORS }}" value="{{ @error }}">
+        <div class="alert alert-error">
+            {{ @error }}
+        </div>
+    </repeat>
+</div>
+<div class="container">
+    <repeat group="{{ @INFOS }}" value="{{ @info }}">
+        <div class="alert alert-info">
+            {{ @info }}
+        </div>
+    </repeat>
 </div>

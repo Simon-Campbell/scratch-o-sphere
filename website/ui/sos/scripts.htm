@@ -1,0 +1,29 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <form class="form-inline" method="GET" action="/jobs/">
+        <input type="search" name="search" placeholder="Script name"/>
+        <a href="/scripts/edit" class="btn btn-success">Create new Script</a>
+    </form>
+    
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Misc</th>
+        </tr>
+        <repeat group="{{ @SCRIPTS }}" value="{{ @script }}">
+            <tr>
+                <td>{{ @script->ID }}</td>
+                <td>{{ @script->NAME }}</td>
+                <td>
+                    <a href="/scripts/edit/{{ @script->ID }}">Edit</a>, 
+                    <a href="/scripts/delete/{{ @script->ID }}">Delete</a>
+                </td>
+            </tr>
+        </repeat>
+    </table>
+</div>
+
+<include href="footer.htm" />

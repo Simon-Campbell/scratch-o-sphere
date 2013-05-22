@@ -5,29 +5,12 @@ namespace ACL;
 class PermissionTable extends \Prefab
 {    
     /**
-     * Summary of getPermissionByName
-     * @param $name The name of the permission
-     * @return Permission
-     */
-    function getPermissionByName($name) {
-        $permission = \Base::instance()->set('result', \Config::instance()->DB->exec(
-            "SELECT * FROM `acl_permissions` 
-            WHERE 
-            `name`=:name",
-            array(
-                ':name' => $name,
-            )
-        ));
-        
-        return (sizeof($permission) == 1) ?   new Permission($permission[0])    : new Permission();
-    }
-    
-    /**
      * Summary of getPermissionByRoute
      * @param $route The route of the permission
      * @return Permission
      */
     function getPermissionByRoute($route) {
+        
         $permission = \Base::instance()->set('result', \Config::instance()->DB->exec(
             "SELECT * FROM `acl_permissions` 
             WHERE 
@@ -37,7 +20,7 @@ class PermissionTable extends \Prefab
             )
         ));
         
-        return (sizeof($permission) == 1) ?   new Permission($permission[0])    : new Permission();
+        return (sizeof($permission) == 1) ?   new Permission($permission[0])    : null;
     }
     
     /**
@@ -55,7 +38,7 @@ class PermissionTable extends \Prefab
             )
         ));
         
-        return (sizeof($permission) == 1) ?   new Permission($permission[0])    : new Permission();
+        return (sizeof($permission) == 1) ?   new Permission($permission[0])    : null;
     }
     
     /**

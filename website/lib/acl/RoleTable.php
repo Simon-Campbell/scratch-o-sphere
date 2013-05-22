@@ -19,7 +19,7 @@ class RoleTable extends \Prefab
             )
         ));
         
-        return (sizeof($role) == 1) ?   new Role($role[0])    : new Role();
+        return (sizeof($role) == 1) ?   new Role($role[0])    : null;
     }
     
     /**
@@ -37,7 +37,7 @@ class RoleTable extends \Prefab
             )
         ));
         
-        return (sizeof($role) == 1) ?   new Role($role[0])    : new Role();
+        return (sizeof($role) == 1) ?   new Role($role[0])    : null;
     }
     
     /**
@@ -58,19 +58,25 @@ class RoleTable extends \Prefab
      * Summary of updateRole
      * @param $data the values to 
      */
-    function updateRole($id, $permissionmask) {
-        $test = \Config::instance()->DB->exec(
-            "UPDATE `acl_roles`
-            SET 
-                `permissionmask`=:permissionmask
-            WHERE 
-                `id`=:id",
-            array(
-                ':permissionmask'    => $permissionmask,
-                ':id'                => $id,
-            )
-        );
-        return $test;
+    function updateRole($id, $name, $permissionmask) {
+        $role = new \DB\SQL\Mapper(\Config::instance()->DB, 'acl_roles');
+        $role->load(array('`id`=?', $id));
+        $role->name = $name;
+        $role->permissionmask = $permissionmask;
+        isset($id) ? $role->save() : $role->insert();
+    }
+    
+    function update($f3) {
+        $id = $f3->get("PARAMS.id");
+        isset($id) ? $id : null;        
+        $name = $f3->get("POST.name");
+        $permissions = $f3->get("POST.permissions");
+        $permissionmask = 0;
+        foreach($permissions as $perm) {
+            $permissionmask += pow(2, $perm);
+        }
+        $this->updateRole($id, $name, $permissionmask);
+        $f3->reroute("/roles");
     }
     
     /**

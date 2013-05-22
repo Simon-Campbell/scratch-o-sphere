@@ -1,0 +1,43 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <div class="alert alert-info">
+        INFO:
+        <check if="{{ isset(@EDITROLE->NAME) }}">
+            <true>Editing role "{{ @EDITROLE->NAME }}"</true>
+            <false>Adding a new role</false>
+        </check>
+    </div>
+    
+    <form class="form-horizontal" method="POST">
+        <div class="control-group">
+            <label>Name</label>
+            <input type="text" name="name" id="name" placeholder="Name" value="{{ @EDITROLE->NAME }}" required>
+        </div>
+        <div class="control-group">
+            <label>Permissions</label>
+            <select name="permissions[]" id="permissions" class="multiselect" multiple="multiple">
+                <repeat group="{{ @PERMISSIONS }}" value="{{ @perm }}">
+                    {{ @selected = '' }}
+                    <check if="{{ pow(2, @perm->ID) & @EDITROLE->PERMISSIONMASK }}">
+                        {{ @selected = 'selected="selected"' }}
+                    </check>
+                    <option value="{{ @perm->ID }}" {{ @selected }}>{{ @perm->NAME }}</option>
+                </repeat>
+            </select>
+        </div>
+        <hr />
+        <div class="control-group">
+            <button type="submit" class="btn">
+                <check if="{{ isset(@EDITROLE->NAME) }}">
+                    <false>Submit</false>
+                    <true>Update</true>
+                </check>
+            </button>
+            <a href="/roles" class="btn btn-warning">Cancel editing</a>
+        </div>
+    </form>
+</div>
+
+<include href="footer.htm" />

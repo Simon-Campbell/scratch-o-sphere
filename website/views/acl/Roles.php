@@ -1,6 +1,6 @@
 <?php
 
-namespace Views;
+namespace Views\ACL;
 
 class Roles
 {
@@ -11,6 +11,6 @@ class Roles
     }
     
     function render() {
-        echo \Template::instance()->render('rolestable.htm');
+        echo \Template::instance()->render('acl\rolestable.htm');
     }
 }

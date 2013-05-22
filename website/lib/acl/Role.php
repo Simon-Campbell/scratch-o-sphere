@@ -15,19 +15,36 @@ class Role
         $this->PERMISSIONMASK   = isset($data['permissionmask']) ? $data['permissionmask']  : 0;        
     }
     
-    function hasPermissionByName($name) {
-        $pow = pow(2, PermissionTable::instance()->getPermissionByName($name)->ID);
-        if($this->PERMISSIONMASK & $pow || $pow == 1) {
-            return true;
-        }
-        return false;
-    }
-    
     function hasPermissionByRoute($route) {
-        $pow = pow(2, PermissionTable::instance()->getPermissionByRoute($route)->ID);
-        if($this->PERMISSIONMASK & $pow || $pow == 1) {
+        $route = rtrim($route, "/");
+        if(!isset($route) || $route == "") {
             return true;
         }
+        $permMaskCheck = $this->PERMISSIONMASK;
+        $idCounter = 0;
+        while($permMaskCheck != 0) {
+            $test = decbin($permMaskCheck);
+            $set = $permMaskCheck & 1;
+            $permMaskCheck = $permMaskCheck >> 1;
+            if($set == 1) {
+                $perm = PermissionTable::instance()->getPermissionById($idCounter);
+                if($perm != null) {
+                    if($route == $perm->ROUTE) {
+                        return true;
+                    }
+                    $wildcardcheck = stripos($perm->ROUTE, "*");
+                    $newroute = str_replace("*", "", $perm->ROUTE);
+                    if($newroute != "/") {
+                        $newroute = rtrim($newroute, "/");
+                    }
+                    $routecheck = stripos($route, $newroute);
+                    if($wildcardcheck !== false && $routecheck !== false) {
+                        return true;
+                    }
+                }
+            }
+            $idCounter++;
+        }        
         return false;
     }
     

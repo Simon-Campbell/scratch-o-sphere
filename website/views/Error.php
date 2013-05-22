@@ -2,12 +2,12 @@
 
 namespace Views;
 
-class _403
+class Error
 {
-    function __construct($text = "") {
+    function __construct($code, $title = "", $text = "") {
         $f3 = \Base::instance();
-        $f3->set('ERROR.code', 403);
-        $f3->set('ERROR.title', 'Forbidden');
+        $f3->set('ERROR.code', $code);
+        $f3->set('ERROR.title', $title);
         $f3->set('ERROR.text', $text);
     }
     

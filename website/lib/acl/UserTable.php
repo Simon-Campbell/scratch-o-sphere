@@ -25,6 +25,9 @@ class UserTable extends \Prefab
                 'username'  => null,
                 'realname'  => null,
                 'role'      => null,
+                'email'     => null,
+                'lipadmin'  => null,
+                'inspector' => null,
             );
     }
     

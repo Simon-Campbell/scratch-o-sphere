@@ -1,6 +1,6 @@
 <?php
 
-namespace Views;
+namespace Views\ACL;
 
 class Users
 {
@@ -10,6 +10,6 @@ class Users
     }
     
     function render() {
-        return \Template::instance()->render('userstable.htm');
+        echo \Template::instance()->render('acl\userstable.htm');
     }
 }

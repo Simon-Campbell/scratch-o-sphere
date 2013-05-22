@@ -1,0 +1,75 @@
+﻿<include href="head.htm" />
+<include href="navbar.htm" />
+
+<div class="container">
+    <form class="form-horizontal" method="POST">
+        <div class="control-group">
+            <label>Real Name</label>
+            <input type="text" name="realname" id="realname" placeholder="Real Name" value="{{ @EDITUSER['realname'] }}">
+        </div>
+        <div class="control-group">
+            <label>Username</label>
+            <input type="text" name="username" id="username" placeholder="Username" value="{{ @EDITUSER['username'] }}">
+        </div>
+        <check if="{{ !isset(@EDITUSER['id']) }}">
+            <div class="control-group">
+                <label>Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+        </check>
+        <div class="control-group">
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" value="{{ @EDITUSER['email'] }}">
+        </div>
+        <div class="control-group">
+            <label>Role</label>
+            <select name="role" id="role">
+                <repeat group="{{ @ROLES }}" value="{{ @role }}">
+                    {{ @selected = '' }}
+                    <check if="{{ @EDITUSER['role'] == @role->ID }}">
+                        {{ @selected = 'selected="selected"' }}
+                    </check>
+                    <option value="{{ @role->ID }}" {{ @selected }}>
+                        {{ @role->NAME }}
+                    </option>
+                </repeat>
+            </select>
+        </div>
+        <hr />
+        <div class="control-group">
+            <label>LIP Admin</label>
+            <label class="radio inline">
+                <input type="radio" name="lipadmin" id="lipAdminOption1" value="0" <check if="{{ @EDITUSER['lipadmin'] == 0 }}">checked</check>/>
+                False
+            </label>
+            <label class="radio inline">
+                <input type="radio" name="lipadmin" id="lipAdminOption2" value="1" <check if="{{ @EDITUSER['lipadmin'] == 1 }}">checked</check>/>
+                True
+            </label>
+        </div>
+        <div class="control-group">
+            <label>Inspector</label>
+            <label class="radio inline">
+                <input type="radio" name="inspector" id="inspectorOption1" value="0" <check if="{{ @EDITUSER['inspector'] == 0 }}">checked</check>/>
+                False
+            </label>
+            <label class="radio inline">
+                <input type="radio" name="inspector" id="inspectorOption2" value="1" <check if="{{ @EDITUSER['inspector'] == 1 }}">checked</check>/>
+                True
+            </label>
+        </div>
+        
+        <hr />
+        <div class="control-group">
+            <button type="submit" class="btn">
+                <check if="{{ isset(@EDITUSER['id']) }}">
+                    <false>Submit</false>
+                    <true>Update</true>
+                </check>
+            </button>
+            <a href="/users" class="btn btn-warning">Cancel editing</a>
+        </div>
+    </form>
+</div>
+
+<include href="footer.htm" />

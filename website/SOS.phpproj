@@ -97,9 +97,6 @@
     <Compile Include="lib\image.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\JSON.php">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="lib\log.php">
       <SubType>Code</SubType>
     </Compile>
@@ -112,10 +109,19 @@
     <Compile Include="lib\matrix.php">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="lib\navbar.php">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="lib\session.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\smtp.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\sos\Script.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\sos\ScriptTable.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\template.php">
@@ -125,24 +131,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\utf.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\views\Jobs.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\views\_403.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\views\Index.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\views\Roles.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\views\UsersEdit.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\views\Users.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\web.php">
@@ -158,6 +146,30 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="index.php" />
+    <Compile Include="views\acl\Roles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\acl\RolesEdit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\acl\Users.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\acl\UsersEdit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\Index.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\Error.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\sos\Script.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="views\sos\Scripts.php">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lib" />
@@ -166,15 +178,23 @@
     <Folder Include="lib\db\mongo" />
     <Folder Include="lib\db\sql" />
     <Folder Include="lib\acl" />
-    <Folder Include="lib\views" />
+    <Folder Include="lib\sos" />
     <Folder Include="lib\web" />
     <Folder Include="ui" />
     <Folder Include="ui\css" />
     <Folder Include="ui\img" />
     <Folder Include="ui\js" />
+    <Folder Include="ui\acl" />
+    <Folder Include="ui\sos" />
+    <Folder Include="views" />
+    <Folder Include="views\acl" />
+    <Folder Include="views\sos" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".htaccess">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="config.cfg">
       <SubType>Content</SubType>
     </Content>
     <Content Include="lib\api.chm">
@@ -189,7 +209,16 @@
     <Content Include="lib\license.txt">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="readme.md">
+    <Content Include="ui\acl\editrole.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\acl\edituser.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\acl\rolestable.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\acl\userstable.htm">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ui\css\base.css">
@@ -213,9 +242,6 @@
     <Content Include="ui\css\theme.css">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ui\edituser.htm">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="ui\error.htm">
       <SubType>Content</SubType>
     </Content>
@@ -234,7 +260,7 @@
     <Content Include="ui\index.htm">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ui\jobs.htm">
+    <Content Include="ui\js\bootstrap-multiselect.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ui\js\bootstrap.js">
@@ -249,16 +275,16 @@
     <Content Include="ui\js\jquery-1.9.1.min.js">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ui\login.htm">
+    <Content Include="ui\js\run-multiselect.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ui\navbar.htm">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ui\rolestable.htm">
+    <Content Include="ui\sos\script.htm">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ui\userstable.htm">
+    <Content Include="ui\sos\scripts.htm">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>

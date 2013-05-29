@@ -46,6 +46,21 @@ public class ScriptsActivity extends Activity {
 			e.printStackTrace();
 		}
 		
+		for(int i = 0; i< scripts.length(); i++) {
+			JSONObject obj;
+			int id;
+			String name, data;
+			try {
+				obj = scripts.getJSONObject(i);			
+				id = obj.getInt("ID");
+				name = obj.getString("NAME");
+				data = obj.getString("DATA");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}

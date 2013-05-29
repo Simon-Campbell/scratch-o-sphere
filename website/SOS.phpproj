@@ -25,25 +25,330 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".htaccess">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="config.cfg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\api.chm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\changelog.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\code.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\license.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\acl\config\config.cfg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\acl\controller\editrole.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\acl\controller\edituser.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\acl\controller\rolestable.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\acl\controller\userstable.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\fpibb\config\config.cfg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\fpibb\controller\error.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\sos\config\config.cfg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\sos\controller\script.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\sos\controller\scriptgui.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="plugins\sos\controller\scripts.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\base.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap-responsive.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap-responsive.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\bootstrap.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\datetimepicker.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\login.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\theme.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\ui.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\css\ui2.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\footer.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\head.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\glyphicons-halflings-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\glyphicons-halflings.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\AddToVar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Applause.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Bang.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Beep.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\bin.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\bin.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\block.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\block3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\blockmotion.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\blockplace.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\blockstart.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Boing.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\CreateVar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\DiviVar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Else.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Else1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\End.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\EndIf.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\EndIf1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\EndLoop.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\FlashFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\FlashRandomFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\GoBack.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\GoBackFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\GoFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\GoForward.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\GoRandom.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\GoRandomFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\holder.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\holder3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\holder4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\holder5.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Ifeq.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Ifge.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Ifle.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Ifne.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\LightsOnFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\LoopFor.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\LoopWhile.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\MinusFromVar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\ModVar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\MultiVar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\SetColour.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\SetColourRandom.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\SetFlashSpeed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\SetSpeed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\SetVarTo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\temp.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnAnti.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnClock.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnColour.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnDeg.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnLeft.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnLightsOff.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnLightsOn.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\TurnRight.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\img\sos\Wait.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\index.htm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\bootstrap-datetimepicker.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\bootstrap-multiselect.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\bootstrap.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\bootstrap.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\html5shiv.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\jquery-1.9.1.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\jquery.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\jquery2.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\main.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\run-multiselect.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\js\touchpunch.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ui\navbar.htm">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config.php">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="db.local.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\acl\PermissionTable.php">
+    <Compile Include="globals\dbensurer.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\acl\Permission.php">
+    <Compile Include="globals\json.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\acl\Role.php">
+    <Compile Include="globals\mysqldbtype.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\acl\RoleTable.php">
+    <Compile Include="globals\toolbox.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\acl\User.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\acl\UserTable.php">
+    <Compile Include="index.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\audit.php">
@@ -56,9 +361,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\basket.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\config.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\db\cursor.php">
@@ -109,19 +411,10 @@
     <Compile Include="lib\matrix.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lib\navbar.php">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="lib\session.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\smtp.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\sos\Script.php">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\sos\ScriptTable.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\template.php">
@@ -145,147 +438,192 @@
     <Compile Include="lib\web\pingback.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="index.php" />
-    <Compile Include="views\acl\Roles.php">
+    <Compile Include="plugins\acl\config\database.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\acl\RolesEdit.php">
+    <Compile Include="plugins\acl\config\init.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\acl\Users.php">
+    <Compile Include="plugins\acl\model\permission.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\acl\UsersEdit.php">
+    <Compile Include="plugins\acl\model\permissiontable.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\Index.php">
+    <Compile Include="plugins\acl\model\role.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\Error.php">
+    <Compile Include="plugins\acl\model\roletable.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\sos\Script.php">
+    <Compile Include="plugins\acl\model\user.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="views\sos\Scripts.php">
+    <Compile Include="plugins\acl\model\usertable.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\acl\view\apiuserlogin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\acl\view\roles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\acl\view\rolesedit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\acl\view\users.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\acl\view\usersedit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\config\init.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\model\navbar.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\model\querybuilder.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\model\sqlcolumn.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\model\sqltable.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\model\sqlvalue.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\view\error.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\fpibb\view\index.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\config\database.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\config\init.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\model\script.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\model\scripttable.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\view\apigetscript.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\view\script.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\sos\view\scripts.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.01wzfpdp1ry.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.03zr3b4bei2.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0a2w6r88lh3.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0au5o42xbuf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0b0lshpg4cf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0cl253t44tz.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0cwm7e5w5cm.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0ffhe8ricb7.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0fned71vbkj.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0fqu0inwqh7.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0fsafzlbsmj.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0gk7ljgivbz.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0h13shkvwfz.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0hxftqn6gxb.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0k86zbuy5bi.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0n2esp8z6mu.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0njci5rw732.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.0sbt8oq5uwt.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.1sp6yhmupwi.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.1uaxpazgal2.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.1vqd6ehhn0u.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.1w3jtb9zl12.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.2ajlvch88s2.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tmp\0bfzamaxysv.2ngsswoplfy.php">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="globals" />
     <Folder Include="lib" />
     <Folder Include="lib\db" />
     <Folder Include="lib\db\jig" />
     <Folder Include="lib\db\mongo" />
     <Folder Include="lib\db\sql" />
-    <Folder Include="lib\acl" />
-    <Folder Include="lib\sos" />
     <Folder Include="lib\web" />
-    <Folder Include="ui" />
-    <Folder Include="ui\css" />
-    <Folder Include="ui\img" />
-    <Folder Include="ui\js" />
-    <Folder Include="ui\acl" />
-    <Folder Include="ui\sos" />
-    <Folder Include="views" />
-    <Folder Include="views\acl" />
-    <Folder Include="views\sos" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include=".htaccess">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="config.cfg">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="lib\api.chm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="lib\changelog.txt">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="lib\code.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="lib\license.txt">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\acl\editrole.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\acl\edituser.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\acl\rolestable.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\acl\userstable.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\base.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\bootstrap-responsive.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\bootstrap-responsive.min.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\bootstrap.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\bootstrap.min.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\login.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\css\theme.css">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\error.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\footer.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\head.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\img\glyphicons-halflings-white.png">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\img\glyphicons-halflings.png">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\index.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\js\bootstrap-multiselect.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\js\bootstrap.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\js\bootstrap.min.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\js\html5shiv.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\js\jquery-1.9.1.min.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\js\run-multiselect.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\navbar.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\sos\script.htm">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ui\sos\scripts.htm">
-      <SubType>Content</SubType>
-    </Content>
+    <Folder Include="plugins" />
+    <Folder Include="plugins\acl" />
+    <Folder Include="plugins\acl\config" />
+    <Folder Include="plugins\acl\controller" />
+    <Folder Include="plugins\acl\model" />
+    <Folder Include="plugins\acl\view" />
+    <Folder Include="plugins\fpibb" />
+    <Folder Include="plugins\fpibb\config" />
+    <Folder Include="plugins\fpibb\controller" />
+    <Folder Include="plugins\fpibb\model" />
+    <Folder Include="plugins\fpibb\view" />
+    <Folder Include="C:\Users\Steven\Documents\COMP241\scratch-o-sphere\website\plugins\sos" />
+    <Folder Include="C:\Users\Steven\Documents\COMP241\scratch-o-sphere\website\plugins\sos\model" />
+    <Folder Include="C:\Users\Steven\Documents\COMP241\scratch-o-sphere\website\plugins\sos\view" />
+    <Folder Include="C:\Users\Steven\Documents\COMP241\scratch-o-sphere\website\plugins\sos\controller" />
+    <Folder Include="C:\Users\Steven\Documents\COMP241\scratch-o-sphere\website\plugins\sos\config" />
+    <Folder Include="tmp" />
+    <Folder Include="ui\" />
+    <Folder Include="ui\css\" />
+    <Folder Include="ui\img\" />
+    <Folder Include="ui\img\sos\" />
+    <Folder Include="ui\js\" />
   </ItemGroup>
 </Project>

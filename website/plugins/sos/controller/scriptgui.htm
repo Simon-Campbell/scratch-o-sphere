@@ -1,0 +1,85 @@
+﻿<div class="container-fluid" >
+    <div class="row-fluid"  >
+        <div id="tabs" class="span2" style="margin-top: 10px">
+			<ul id="item">
+				<li><a href="#tabs-2">Motion</a></li>
+				<li><a href="#tabs-1" >Control</a></li>					
+				<li><a href="#tabs-3">Audio</a></li>
+				<li><a href="#tabs-4">Visuals</a></li>
+				<li><a id="twidth" href="#tabs-5">Variables</a></li>
+			</ul>
+			<div id="tabs-1">
+				<ul id="control" class="block">       
+					<li id="Wait" name="wait"><img src="ui/img/sos/Wait.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:97px;width:35px" ></li>
+					<li id="LoopFor" name="loopFor"><img src="ui/img/sos/LoopFor.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:62px;width:35px" ></li>
+					<li id="Ifeq" name="ifEq"><img src="ui/img/sos/Ifeq.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:33px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:123px;width:40px" ></li>
+					<li id="Ifle" name="ifLe"><img src="ui/img/sos/Ifle.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:33px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:123px;width:40px" ></li>
+					<li id="Ifge" name="ifGe"><img src="ui/img/sos/Ifge.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:33px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:123px;width:40px" ></li>
+					<li id="Ifne" name="ifNe"><img src="ui/img/sos/Ifne.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:33px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:123px;width:40px" ></li>
+				</ul>
+			</div>
+			<div id="tabs-2">
+				<ul id="motion" class="block">
+					<li id="SetSpeed" name="set,SPEED"><img src="ui/img/sos/SetSpeed.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:150px;width:35px" ></li>
+					<li id="GoFor" name="goForwardsFor"><img src="ui/img/sos/GoFor.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:170px;width:35px" ></li>
+					<li id="GoBackFor" name="goBackwardsFor"><img src="ui/img/sos/GoBackFor.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:179px;width:35px" ></li>
+					<li id="GoForward" name="goForward"><img src="ui/img/sos/GoForward.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:150px;width:35px"  ></li>
+					<li id="GoBack" name="goBackward"><img src="ui/img/sos/GoBack.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:160px;width:35px" ></li>
+					<li id="TurnRight" name="turnRight"><img src="ui/img/sos/TurnRight.png" /></li>
+					<li id="TurnLeft" name="turnLeft"><img src="ui/img/sos/TurnLeft.png" /></li>
+					<li id="TurnClock" name="turnClockwise"><img src="ui/img/sos/TurnClock.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:157px;width:35px" ></li>
+					<li id="TurnAnti" name="turnAntiClockwise"><img src="ui/img/sos/TurnAnti.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:199px;width:35px" ></li>
+				</ul>
+			</div>
+			<div id="tabs-3">
+				<ul id="audio" class="block">
+					<li id="Bang" name="play,bang"><img src="ui/img/sos/Bang.png" /></li>
+					<li id="Beep" name="play,beep"><img src="ui/img/sos/Beep.png" /></li>
+					<li id="Applause" name="play,clap"><img src="ui/img/sos/Applause.png" /></li>
+					<li id="Boing" name="play,boing"><img src="ui/img/sos/Boing.png" /></li>
+				</ul>
+			</div>
+			<div id="tabs-4">
+				<ul id="visual" class="block">
+					<li id="LightsOn" name="turnLedOn"><img src="ui/img/sos/TurnLightsOn.png" /></li>
+					<li id="LightsOff" name="turnLedOff"><img src="ui/img/sos/TurnLightsOff.png" /></li>
+					<li id="LightsOnFor" name="turnOnFor"><img src="ui/img/sos/LightsOnFor.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:150px;width:35px" ></li>
+					<li id="SetColour" name="setColour"><img src="ui/img/sos/SetColour.png" /><input name="ch" type="text"   maxlength="16" style="position: absolute; margin-top:16px;margin-left:140px;width:35px" ></li>
+					<li id="SetFlashSpeed" name="set,FLASHSPEED"><img src="ui/img/sos/SetFlashSpeed.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:164px;width:35px" ></li>
+					<li id="FlashFor" name="flashFor"><img src="ui/img/sos/FlashFor.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:104px;width:35px" ></li>
+					<li id="GoRandom" name="randomizeColour"><img src="ui/img/sos/SetColourRandom.png" /></li>
+					<li id="GoRandomFor" name="flashRandomFor"><img src="ui/img/sos/FlashRandomFor.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:195px;width:35px" ></li>
+				</ul>
+			</div>
+			<div id="tabs-5">
+				<ul id="vars" class="block">
+					<li id="SetVarTo" name="set"><img src="ui/img/sos/SetVarTo.png" /><input name="var" type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:125px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:220px;width:40px" ></li>
+					<li id="AddToVar" name="add"><img src="ui/img/sos/AddToVar.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:53px;width:40px" ><input  type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:220px;width:40px" ></li>
+					<li id="MinusFromVar" name="minus"><img src="ui/img/sos/MinusFromVar.png" /><input  type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:67px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:255px;width:40px" ></li>
+					<li id="MultiplyBy" name="multiply"><img src="ui/img/sos/MultiVar.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:168px;width:40px" ><input  type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:259px;width:40px" ></li>
+					<li id="DivideBy" name="divide"><img src="ui/img/sos/DiviVar.png" /><input  type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:155px;width:40px" ><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:242px;width:40px" ></li>
+					<li id="Remainder" name="mod"><img src="ui/img/sos/ModVar.png" /><input type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:175px;width:40px" ><input  type="text"  maxlength="10" style="position: absolute; margin-top:16px;margin-left:257px;width:40px" ></li>
+				</ul>				
+			</div>
+		</div>
+		<div id="canvas"  class="span10">
+			<ol id="output" >
+				<li id="top" name="start"><img src="ui/img/sos/blockstart.png" ></li>
+			</ol>
+		</div>
+	</div>
+	<div id="bin" style="position:absolute;padding:10px;border-radius: 5px 5px 5px 5px;background-color: transparent;z-index:-1; height: 200px ;top: 500px;width:220px" >
+        <img src="ui/img/sos/bin.png">
+    </div>
+    <div id="gencode">Generate code</div>
+    <div id="abuba">Multidrag</div>
+    <div class="row-fluid">
+        <div class="span2"></div>
+        <div class="span8">
+            <textarea name="data" id="codeOut"></textarea>
+        </div>
+        <div class="span2">
+            <textarea name="vars" id="codeVar">Variables:</textarea>
+        </div>
+    </div>
+</div>

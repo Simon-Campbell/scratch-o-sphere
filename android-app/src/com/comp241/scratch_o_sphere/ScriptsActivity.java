@@ -1,5 +1,11 @@
 package com.comp241.scratch_o_sphere;
 
+import java.io.IOException;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.comp241.scratch_o_sphere.parser.Parser;
 
 import android.annotation.TargetApi;
@@ -14,14 +20,34 @@ import android.view.View;
 
 public class ScriptsActivity extends Activity {
 
+	String token;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_scripts);
+		
+		token = this.getIntent().getStringExtra("token");
+		
+		JSONObject scriptRequest = null;
+		JSONArray scripts = new JSONArray();
+		
+		try {
+			scriptRequest = JSONWebRequest.getJsonObject("http://54.252.102.19/api/" + token + "/getscript");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			scripts = scriptRequest.getJSONArray("scripts");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
-		Parser p = new Parser();
 	}
 
 	/**

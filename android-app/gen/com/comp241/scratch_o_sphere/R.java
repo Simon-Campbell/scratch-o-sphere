@@ -34,13 +34,14 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
-        public static final int activity_main=0x7f030001;
+        public static final int activity_script_run=0x7f030001;
         public static final int activity_scripts=0x7f030002;
     }
     public static final class menu {
         public static final int login=0x7f070000;
         public static final int main=0x7f070001;
-        public static final int scripts=0x7f070002;
+        public static final int script_run=0x7f070002;
+        public static final int scripts=0x7f070003;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -53,6 +54,7 @@ public final class R {
         public static final int title=0x7f050004;
         public static final int title_activity_login=0x7f05000a;
         public static final int title_activity_main=0x7f050009;
+        public static final int title_activity_script_run=0x7f05000b;
         public static final int title_activity_scripts=0x7f050008;
     }
     public static final class style {

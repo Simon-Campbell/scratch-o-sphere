@@ -18,8 +18,12 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ScriptsActivity extends Activity {
 
@@ -60,7 +64,7 @@ public class ScriptsActivity extends Activity {
 				id = obj.getInt("ID");
 				name = obj.getString("NAME");
 				data = obj.getString("DATA");
-				lst.add(name);
+				lst.add(id + ": " + name);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -71,6 +75,21 @@ public class ScriptsActivity extends Activity {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lst);
 		ListView listView  = (ListView) findViewById(R.id.listView1);
 		listView.setAdapter(adapter);
+		
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				TextView tView = (TextView) view;
+				String text = (String) tView.getText();
+				
+				String scriptID = text.split(":")[0];
+				
+				Intent intent = new Intent(parent.getContext(), ScriptRunActivity.class);
+				intent.putExtra("token", token);
+				intent.putExtra("scriptID", scriptID);
+				parent.getContext().startActivity(intent);
+			}			
+		});
 		
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -109,11 +128,4 @@ public class ScriptsActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	public void Select(View view)
-	{
-		Intent intent = new Intent(this, MainActivity.class);
-		startActivity(intent);
-	}
-
 }

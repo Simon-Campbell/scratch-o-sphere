@@ -7,10 +7,11 @@
     <string name="editText_password">Password</string>
     <string name="title">Scratch-O-Sphere</string>
     <string name="button_login">Login</string>
-     <string name="button_cont">Done</string>
+    <string name="button_cont">Done</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_scripts">Your Programs</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_script_run">ScriptRunActivity</string>
 
 </resources>

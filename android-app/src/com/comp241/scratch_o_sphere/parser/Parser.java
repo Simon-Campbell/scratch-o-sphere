@@ -2,6 +2,8 @@ package com.comp241.scratch_o_sphere.parser;
 import java.io.*;
 import java.util.*;
 
+import orbotix.robot.base.Robot;
+
 public class Parser {
 	Map<String, Object> variableHive;
 	Map<String, ICommandHandler> functionHive;
@@ -15,7 +17,11 @@ public class Parser {
 	
 	ArrayList<String> parsedCommands;
 	
-	public Parser() {
+	Robot robot;
+	
+	public Parser(Robot r) {
+		robot = r;
+		
 		parsedCommands = new ArrayList<String>();
 		
 		// Set up variable hive and define default values
@@ -79,7 +85,7 @@ public class Parser {
 			
 			if(commandSplit.length > 0 && functionHive.containsKey(commandSplit[0])) {
 				ICommandHandler handler = functionHive.get(commandSplit[0]);
-				handler.HandleCommand(this, commandSplit);
+				handler.HandleCommand(robot, this, commandSplit);
 			}
 			commandPointer++;
 		}		

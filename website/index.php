@@ -36,7 +36,8 @@ $f3->push('EXTRACSS', 'input[type="text"], input[type="password"], input[type="e
 //User checks//
 ACL\Model\UserTable::instance()->setSuperuserMask();
 ACL\Model\UserTable::instance()->setVisitorMask();
-ACL\Model\User::instance()->routeCheck($f3);
+$test = "test";
+
 
 //Timer
 $finish = microtime();

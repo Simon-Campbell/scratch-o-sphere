@@ -49,8 +49,8 @@ public class LoginActivity extends Activity {
 	
 	public void login(View view) throws ClientProtocolException, IOException, JSONException
 	{
-		String username = mUsername.getText().toString();
-		String password = mPassword.getText().toString();
+		String username = "admin"; //mUsername.getText().toString();
+		String password = "testpw"; //mPassword.getText().toString();
         
         JSONObject login = JSONWebRequest.getJsonObject("http://54.252.102.19/api/login/" + username + "/" + password + "/");
 		

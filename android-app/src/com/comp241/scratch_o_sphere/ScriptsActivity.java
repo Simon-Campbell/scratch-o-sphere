@@ -1,6 +1,7 @@
 package com.comp241.scratch_o_sphere;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,6 +18,8 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class ScriptsActivity extends Activity {
 
@@ -46,6 +49,8 @@ public class ScriptsActivity extends Activity {
 			e.printStackTrace();
 		}
 		
+		ArrayList<String> lst = new ArrayList<String>();
+		
 		for(int i = 0; i< scripts.length(); i++) {
 			JSONObject obj;
 			int id;
@@ -55,11 +60,17 @@ public class ScriptsActivity extends Activity {
 				id = obj.getInt("ID");
 				name = obj.getString("NAME");
 				data = obj.getString("DATA");
+				lst.add(name);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+			
+		}		
+
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lst);
+		ListView listView  = (ListView) findViewById(R.id.listView1);
+		listView.setAdapter(adapter);
 		
 		// Show the Up button in the action bar.
 		setupActionBar();

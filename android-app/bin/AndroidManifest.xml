@@ -9,6 +9,8 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -36,9 +38,9 @@
             android:name="com.comp241.scratch_o_sphere.ScriptRunActivity"
             android:label="@string/title_activity_script_run"
             android:parentActivityName="com.comp241.scratch_o_sphere.ScriptsActivity" >
-            <meta-data
+            <!--<meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.comp241.scratch_o_sphere.ScriptsActivity" />
+                android:value="com.comp241.scratch_o_sphere.ScriptsActivity" />-->
         </activity>
     </application>
 

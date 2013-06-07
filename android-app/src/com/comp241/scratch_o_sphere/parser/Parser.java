@@ -2,39 +2,43 @@ package com.comp241.scratch_o_sphere.parser;
 import java.io.*;
 import java.util.*;
 
-import orbotix.robot.base.Robot;
+import com.comp241.scratch_o_sphere.ScriptRunActivity;
+
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 
 public class Parser {
 	Map<String, Object> variableHive;
 	Map<String, ICommandHandler> functionHive;
 	LoopStack loopStack = new LoopStack(0, 0);
-	
-	private ControlHandler controlHandler;
-	private MotionHandler motionHandler;
-	private VisualHandler visualHandler;
-	
+
 	int commandPointer = 0;
 	
 	ArrayList<String> parsedCommands;
 	
-	Robot robot;
+	ScriptRunActivity main;
 	
-	public Parser(Robot r) {
-		robot = r;
+	public Parser(ScriptRunActivity s) {
+		main = s;
 		
 		parsedCommands = new ArrayList<String>();
 		
 		// Set up variable hive and define default values
 		variableHive = new HashMap<String, Object>();		
-		variableHive.put("SPEED", 0);				
+		variableHive.put("SPEED", 100);				
 		variableHive.put("HEADING", 0);	
-		variableHive.put("FLASHSPEED", 0);
+		
+		variableHive.put("FLASHSPEED", 1);
+		variableHive.put("RED", 255);
+		variableHive.put("GREEN", 255);
+		variableHive.put("BLUE", 255);
 
 		// Set up command handlers
 		functionHive = new HashMap<String, ICommandHandler>();
-		controlHandler = new ControlHandler(this);
-		motionHandler = new MotionHandler(this);
-		visualHandler = new VisualHandler(this);
+		new ControlHandler(this);
+		new MotionHandler(this);
+		new VisualHandler(this);
+		new AudioHandler(this);
 	}
 	
 	public void parseString(String str) {
@@ -45,7 +49,7 @@ public class Parser {
 			line = line.trim();
 			String newLine = "";
 			for(char c : line.toCharArray()) {
-				if(c != '#' && c != '\t' && c != ' ') {
+				if(c != '#' && c != '\t') {
 					newLine += c;					
 				}
 				else {
@@ -66,7 +70,7 @@ public class Parser {
 			line = line.trim();
 			String newLine = "";
 			for(char c : line.toCharArray()) {
-				if(c != '#' && c != '\t' && c != ' ') {
+				if(c != '#' && c != '\t') {
 					newLine += c;					
 				}
 				else {
@@ -74,18 +78,29 @@ public class Parser {
 				}
 			}
 			parsedCommands.add(newLine);
-		}		
+		}
+		reader.close();
 	}
 	
 	public void run() {
 		commandPointer = 0;
 		while(commandPointer < parsedCommands.size()) {
-			String command = parsedCommands.get(commandPointer).toLowerCase();
+			final String command = parsedCommands.get(commandPointer).toLowerCase(Locale.getDefault());
 			String[] commandSplit = command.split(",");
 			
 			if(commandSplit.length > 0 && functionHive.containsKey(commandSplit[0])) {
+				main.commandList.add(command);
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(main, android.R.layout.simple_list_item_1, main.commandList);
+				main.commands.setAdapter(adapter);
 				ICommandHandler handler = functionHive.get(commandSplit[0]);
-				handler.HandleCommand(robot, this, commandSplit);
+				long waitTime = handler.HandleCommand(this, commandSplit);
+				if(waitTime > 0) {
+					try {
+						Thread.sleep(waitTime);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}				
 			}
 			commandPointer++;
 		}		

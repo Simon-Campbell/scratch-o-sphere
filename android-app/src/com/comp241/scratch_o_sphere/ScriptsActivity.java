@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ScriptsActivity extends Activity {
 
@@ -34,13 +36,20 @@ public class ScriptsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_scripts);
 		
+		if (android.os.Build.VERSION.SDK_INT > 9) {
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
+		}
+		
 		token = this.getIntent().getStringExtra("token");
+		
+		String url = "http://54.252.102.19/api/" + token + "/getscript";
 		
 		JSONObject scriptRequest = null;
 		JSONArray scripts = new JSONArray();
 		
 		try {
-			scriptRequest = JSONWebRequest.getJsonObject("http://54.252.102.19/api/" + token + "/getscript");
+			scriptRequest = JSONWebRequest.getJsonObject(url);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (JSONException e) {
@@ -73,7 +82,7 @@ public class ScriptsActivity extends Activity {
 		}		
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lst);
-		ListView listView  = (ListView) findViewById(R.id.listView1);
+		ListView listView  = (ListView) findViewById(R.id.scripts);
 		listView.setAdapter(adapter);
 		
 		listView.setOnItemClickListener(new OnItemClickListener() {
@@ -81,6 +90,8 @@ public class ScriptsActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				TextView tView = (TextView) view;
 				String text = (String) tView.getText();
+				
+				Toast.makeText(parent.getContext(), "Selected script: " + text, Toast.LENGTH_SHORT).show();
 				
 				String scriptID = text.split(":")[0];
 				

@@ -1,0 +1,28 @@
+set,var,1					// Variable "var" = 1 - Done
+mod,var,1					// "var" = "var" % 1 - Done						
+multiply,var,1				// "var" = "var" * 1 - Done
+minus,1,var					// "var" -= 1 - Done
+add,1,var					// "var" += 1 - Done
+divide,var,1				// "var" = "var" / 1 - Done
+flashRandomFor,1			// flash random colours at FLASHSPEED rate for 1 sec - Done
+randomizeColour				// sets colour of LED's to a random color - Done
+flashFor,11					// flash the set colour for 11 sec ( default colour = white" ) - Done
+set,FLASHSPEED,1			// Variable FLASHSPEED = 1 ( amount of flashes per sec) - Done
+setColour,0, 128, 128		// rgb value to set LED's colour - Done
+turnOnFor,1					// turn LED's on for a set time (1) in this instance - Done
+turnLedOff					// turn off LED's - Done
+turnLedOff					// turn on LED's - Done
+play,bang					// play audio clip specified
+play,beep
+play,clap
+play,boing
+wait,1						// stops program for specified time in seconds (1 sec shown here) - Done
+set,SPEED,1					// Variable SPEED = 1 (speed for the sphero in % so 100 ~ 1 and 50 ~ 0.5 etc) - Done
+goForwardsFor,11			// go heading 0 for specified time (11 secs shown) - Done
+goBackwardsFor,11			// go heading 180 for the time - Done
+goForward,10				// go heading 0 for a time that equates to traviling the specified distance in metres - Done
+goBackward,10				// " " " " "  180 " " " " " " ... - Done
+turnRight					// set heading to 90 and then reset current heading to 0 - Done
+turnLeft					// heading 270 - Done
+turnClockwise,11			// set heading to specifed value - Done
+turnAntiClockwise,11		// set heading to (360 - value) - Done
